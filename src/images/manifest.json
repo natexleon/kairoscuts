@@ -1,0 +1,164 @@
+{
+    "dee-owner-kairos-cuts-stoney-creek":  {
+                                               "width":  1801,
+                                               "height":  3200,
+                                               "widths":  [
+                                                              640,
+                                                              960,
+                                                              1350
+                                                          ]
+                                           },
+    "kairos-cuts-team-stoney-creek-barbershop":  {
+                                                     "width":  1800,
+                                                     "height":  1800,
+                                                     "widths":  [
+                                                                    700,
+                                                                    1050,
+                                                                    1400
+                                                                ]
+                                                 },
+    "fade-haircut-kairos-cuts":  {
+                                     "width":  1350,
+                                     "height":  2400,
+                                     "widths":  [
+                                                    450,
+                                                    900
+                                                ]
+                                 },
+    "gentlemens-haircut-kairos-cuts":  {
+                                           "width":  1350,
+                                           "height":  2400,
+                                           "widths":  [
+                                                          450,
+                                                          900
+                                                      ]
+                                       },
+    "locs-by-shia-kairos-cuts":  {
+                                     "width":  1350,
+                                     "height":  2400,
+                                     "widths":  [
+                                                    450,
+                                                    900
+                                                ]
+                                 },
+    "barber-dee":  {
+                       "width":  900,
+                       "height":  1600,
+                       "widths":  [
+                                      420,
+                                      810
+                                  ]
+                   },
+    "barber-tiago":  {
+                         "width":  900,
+                         "height":  1600,
+                         "widths":  [
+                                        420,
+                                        810
+                                    ]
+                     },
+    "barber-joban":  {
+                         "width":  900,
+                         "height":  1600,
+                         "widths":  [
+                                        420,
+                                        810
+                                    ]
+                     },
+    "barber-dami":  {
+                        "width":  900,
+                        "height":  1600,
+                        "widths":  [
+                                       420,
+                                       810
+                                   ]
+                    },
+    "barber-shia":  {
+                        "width":  900,
+                        "height":  1600,
+                        "widths":  [
+                                       420,
+                                       810
+                                   ]
+                    },
+    "barber-shi":  {
+                       "width":  900,
+                       "height":  1600,
+                       "widths":  [
+                                      420,
+                                      810
+                                  ]
+                   },
+    "barber-dante":  {
+                         "width":  900,
+                         "height":  1600,
+                         "widths":  [
+                                        420,
+                                        810
+                                    ]
+                     },
+    "haircut-in-progress-kairos-cuts":  {
+                                            "width":  900,
+                                            "height":  1600,
+                                            "widths":  [
+                                                           360,
+                                                           640
+                                                       ]
+                                        },
+    "beard-trim-kairos-cuts":  {
+                                   "width":  900,
+                                   "height":  1600,
+                                   "widths":  [
+                                                  360,
+                                                  640
+                                              ]
+                               },
+    "locs-kairos-cuts":  {
+                             "width":  900,
+                             "height":  1600,
+                             "widths":  [
+                                            360,
+                                            640
+                                        ]
+                         },
+    "kairos-cuts-crew":  {
+                             "width":  900,
+                             "height":  1600,
+                             "widths":  [
+                                            360,
+                                            640
+                                        ]
+                         },
+    "fade-kairos-cuts":  {
+                             "width":  900,
+                             "height":  1600,
+                             "widths":  [
+                                            360,
+                                            640
+                                        ]
+                         },
+    "textured-styling-kairos-cuts":  {
+                                         "width":  900,
+                                         "height":  1600,
+                                         "widths":  [
+                                                        360,
+                                                        640
+                                                    ]
+                                     },
+    "kairos-cuts-waiting-area":  {
+                                     "width":  900,
+                                     "height":  1600,
+                                     "widths":  [
+                                                    360,
+                                                    640
+                                                ]
+                                 },
+    "kairos-cuts-storefront-king-street-west-stoney-creek":  {
+                                                                 "width":  1600,
+                                                                 "height":  900,
+                                                                 "widths":  [
+                                                                                600,
+                                                                                1000
+                                                                            ]
+                                                             }
+}
