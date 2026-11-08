@@ -25,9 +25,9 @@ export const business = {
     postalCode: 'L8G 0A9',
     country: 'CA',
   },
-  // Fresha lists Friday as 10 AM – 8 PM; the website shows 7 PM. Confirm with the owner, then change `fri` below.
   hours: [
-    { days: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'], label: 'Mon – Fri', opens: '10:00', closes: '19:00', display: '10:00 AM – 7:00 PM' },
+    { days: ['Monday', 'Tuesday', 'Wednesday', 'Thursday'], label: 'Mon – Thu', opens: '10:00', closes: '19:00', display: '10:00 AM – 7:00 PM' },
+    { days: ['Friday'], label: 'Friday', opens: '10:00', closes: '20:00', display: '10:00 AM – 8:00 PM' },
     { days: ['Saturday'], label: 'Saturday', opens: '09:00', closes: '17:00', display: '9:00 AM – 5:00 PM' },
     { days: ['Sunday'], label: 'Sunday', closed: true, display: 'Closed' },
   ],

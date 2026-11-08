@@ -218,7 +218,7 @@ export function barbershopNode() {
     address: {
       '@type': 'PostalAddress',
       streetAddress: business.address.street,
-      addressLocality: business.address.locality,
+      addressLocality: business.address.city,
       addressRegion: business.address.region,
       postalCode: business.address.postalCode,
       addressCountry: business.address.country,

@@ -21,7 +21,7 @@ Source of truth for business facts: `src/site.config.mjs`. Change a fact there, 
 | 5.0 stars shown for Shia, Shi, Dante | New design | Fresha shows no rating for them | Rating shown only where Fresha shows one |
 | No analytics, no Search Console | Both | No measurement | Event hooks in `site.js`; setup steps below |
 | Mobile has no nav menu | New design | Inner pages reachable only via footer/contextual links | Footer "Explore" links + contextual links on every page |
-| Old "Send us a message" form | Live Webflow site | Not ported (no backend) | Phone + email links on every page. Decide whether a form is needed |
+| Old "Send us a message" form | Live Webflow site | Not ported (owner confirmed no form needed) | Phone + email links on every page |
 
 Rendering: plain static HTML — every price, address, hour and FAQ answer is in the server response; no JavaScript is needed to read content. Accordions on the homepage use `<details>`, which is in the HTML; `/services/` shows the full menu un-collapsed.
 
@@ -58,10 +58,11 @@ Validate after deploy: [Rich Results Test](https://search.google.com/test/rich-r
 
 | Fact | Conflict | Current site value |
 |---|---|---|
-| **Friday hours** | Fresha and the storefront door sign (in the team photo) show a 10 AM–8 PM day; both websites say 7 PM | 10 AM–7 PM (change `hours` in config) |
-| Dee's experience | Webflow says "over 30 years" in one place and "35 plus years" in his bio | 35+ years |
-| Address locality | Fresha: "Stoney Creek, Hamilton"; Webflow: "Hamilton (Stoney Creek)" | `addressLocality: Stoney Creek` — must match the Google Business Profile exactly |
-| Unit number | Webflow omits "Unit 1"; Fresha includes it | "142 King Street West, Unit 1" |
+| Friday hours | ✅ Confirmed by owner | Mon–Thu 10 AM–7 PM, **Fri 10 AM–8 PM**, Sat 9 AM–5 PM — update the Webflow site/GBP if they still say 7 PM |
+| Dee's experience | ✅ Confirmed | 35+ years |
+| Address locality | ✅ Confirmed: Hamilton | Schema `addressLocality: Hamilton`; visible text "Stoney Creek, Hamilton" |
+| Unit number | ✅ Confirmed | "142 King Street West, Unit 1" — make sure GBP includes "Unit 1" |
+| Contact form | ✅ Not needed | Phone + email links only |
 | Shampoo prices | Webflow lists Shampoo and Shampoo/Conditioner without prices | $8 / $10 (from the brief) |
 | Walk-ins | Stated on Webflow ("we accept walk-in traffic") | Kept |
 | Shi's title "Curly-Puff Barber" | Fresha lists "Apprentice" only | Kept from the previous site |
@@ -73,9 +74,9 @@ Validate after deploy: [Rich Results Test](https://search.google.com/test/rich-r
 
 - [ ] Primary category **Barber shop**. Review secondary categories honestly (e.g. "Hair salon" only if braids/locs styling is a core offer).
 - [ ] Business name exactly **Kairos Cuts** — no keywords.
-- [ ] Address identical to the site: `142 King Street West, Unit 1, Stoney Creek, ON L8G 0A9`; confirm the map pin sits on the building.
+- [ ] Address identical to the site: `142 King Street West, Unit 1, Hamilton, ON L8G 0A9` (Stoney Creek area); confirm the map pin sits on the building.
 - [ ] Phone `(905) 662-1810`; website `https://kairoscuts.com/`.
-- [ ] Hours — resolve Friday first, then make GBP, Fresha, the door sign and `site.config.mjs` match.
+- [ ] Hours — Mon–Thu 10–7, Fri 10–8, Sat 9–5, Sun closed. Make GBP, Fresha, the door sign and `site.config.mjs` match.
 - [ ] Booking/appointment link: the Fresha URL (or enable Fresha's Reserve with Google integration if available on your plan).
 - [ ] Services with prices — copy the 17 services from `/services/`.
 - [ ] Photos: storefront (exterior, to help people find the door), interior, team, recent work. Geotagging adds nothing; descriptive filenames are fine.
