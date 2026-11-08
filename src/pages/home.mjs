@@ -71,7 +71,6 @@ const body = `
       <div class="b-alt rv">
         <p>Not sure who to choose?</p>
         <a class="btn ghost" ${bookAttrs}>Book first available</a>
-        <a class="dir-link" href="/barbers/">Meet the team →</a>
       </div>
     </div>
   </section>
