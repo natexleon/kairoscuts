@@ -53,9 +53,7 @@ const body = `
       </div>
       <div class="menu rv d1">${menuAccordion()}
       </div>
-      <p class="note rv">Debit and credit transactions are subject to a processing fee. Cancellations online or by phone. Walk-ins welcome when a chair is free.</p>
-      <p class="rv" style="margin:18px 0 0;"><a class="dir-link" href="/services/">Every service, price &amp; FAQ →</a></p>
-    </div>
+      <p class="note rv">Debit and credit transactions are subject to a processing fee. Cancellations online or by phone. Walk-ins welcome when a chair is free.</p>    </div>
   </section>
 
   <!-- Barbers -->
