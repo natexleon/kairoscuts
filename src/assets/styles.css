@@ -109,10 +109,10 @@ nav.main a:hover{ color:#fff; }
 }
 
 /* Scrolling wordmark banner */
-.marquee{ background:var(--blue); overflow:hidden; padding:12px 0 16px; }
+.marquee{ background:linear-gradient(180deg, #ececec 0%, #c9c9c9 42%, #a9a9a9 58%, #d6d6d6 100%); border-top:1px solid #f5f5f5; border-bottom:1px solid #8a8a8a; overflow:hidden; padding:12px 0 16px; }
 .marquee-track{ display:flex; width:max-content; animation:marquee 30s linear infinite; will-change:transform; }
-.marquee span{ font-size:clamp(52px,8.5vw,110px); font-weight:800; letter-spacing:.02em; text-transform:uppercase; line-height:1; color:#fff; white-space:nowrap; padding-right:.45em; }
-.marquee span i{ font-style:normal; color:rgba(255,255,255,.45); }
+.marquee span{ font-size:clamp(52px,8.5vw,110px); font-weight:800; letter-spacing:.02em; text-transform:uppercase; line-height:1; color:#0d0d0d; white-space:nowrap; padding-right:.45em; }
+.marquee span i{ font-style:normal; color:rgba(13,13,13,.35); }
 @keyframes marquee{ from{ transform:translateX(0); } to{ transform:translateX(-50%); } }
 
 /* Intro — The Shop */

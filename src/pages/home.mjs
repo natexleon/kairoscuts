@@ -9,7 +9,7 @@ const barberName = Object.fromEntries(barbers.map((b) => [b.id, b.name]));
 const igTiles = [
   ['haircut-in-progress-kairos-cuts', 'A haircut in progress at Kairos Cuts'],
   ['beard-trim-kairos-cuts', 'Beard work at Kairos Cuts'],
-  ['locs-kairos-cuts', 'Locs at Kairos Cuts'],
+  ['shia-styling-client-kairos-cuts', "Shia styling a client's hair at Kairos Cuts"],
   ['kairos-cuts-crew', 'The Kairos Cuts crew'],
   ['fade-kairos-cuts', 'Fade work at Kairos Cuts'],
   ['textured-styling-kairos-cuts', 'Textured styling at Kairos Cuts'],
@@ -27,7 +27,7 @@ const body = `
     <div class="hero-content">
       <a class="hero-award" href="#awards"><svg viewBox="0 0 200 200" aria-hidden="true"><use href="#laurel" /></svg><span>Fresha Best in Class · <b>2023 &amp; 2026</b></span></a>
       <h1 class="hero-title"><span class="ht-lead">More than a cut.</span><span class="ht-lead ht-blue">It's the</span><span class="ht-main">Kairos experience.</span></h1>
-      <p class="hero-copy">Old-school craftsmanship. Genuine connections. A barbershop you'll keep coming back to.</p>
+      <p class="hero-copy">Honouring the art of traditional barbering. Mastering the techniques of today.</p>
       <a class="hero-proof" href="#reviews"><span class="star" aria-hidden="true">★</span>${business.rating}<span class="sep" aria-hidden="true">·</span><span class="count">${business.reviewFloor} Reviews</span></a>
       <div class="hero-actions"><a class="btn hero-cta" ${bookAttrs}>Book a chair <span class="arr" aria-hidden="true">↗</span></a></div>
     </div>
@@ -102,11 +102,11 @@ const body = `
     <div class="wrap">
       <p class="label center rv">The Work</p>
       <h2 class="big rv d1">Every hair type.<br />Every chair.</h2>
-      <p class="rv d2">Dee has cut all hair types for 35+ years. Shia handles braids and locs, and the rest of the crew covers fades, beards, kids, and seniors — every day.</p>
+      <p class="rv d2">Dee has cut all hair types for 35+ years. Shia specializes in braiding and hairstyling, and the rest of the crew covers fades, beards, kids, and seniors — every day.</p>
       <ul class="rail gallery rv d2" id="workRail" tabindex="0" aria-label="Our work — swipe for more">
         <li><figure class="g-card">${img('fade-haircut-kairos-cuts', { alt: 'A barber finishing a fade haircut in the chair at Kairos Cuts', sizes: '(min-width: 761px) 33vw, 84vw' })}<figcaption><a class="g-title" href="/services/fade-haircuts/">Fade Haircut</a><span class="g-price">$40</span></figcaption></figure></li>
         <li><figure class="g-card">${img('gentlemens-haircut-kairos-cuts', { alt: "A finished gentlemen's haircut at Kairos Cuts", sizes: '(min-width: 761px) 33vw, 84vw' })}<figcaption><a class="g-title" href="/services/mens-haircuts/">Gentlemen's Haircut</a><span class="g-price">$35</span></figcaption></figure></li>
-        <li><figure class="g-card">${img('locs-by-shia-kairos-cuts', { alt: 'Locs styled by Shia at Kairos Cuts', sizes: '(min-width: 761px) 33vw, 84vw' })}<figcaption><a class="g-title" href="/services/#braids-and-locs">Braids &amp; Locs</a><span class="g-note">With Shia</span></figcaption></figure></li>
+        <li><figure class="g-card">${img('shia-hairstyling-kairos-cuts', { alt: "Shia styling a client's hair at Kairos Cuts", sizes: '(min-width: 761px) 33vw, 84vw' })}<figcaption><a class="g-title" href="/services/#braids-and-styling">Braids &amp; Styling</a><span class="g-note">With Shia</span></figcaption></figure></li>
       </ul>
       <div class="swipe-hint" aria-hidden="true"><span class="sh-bar"><span class="sh-thumb" id="workThumb"></span></span><span class="sh-label">Swipe →</span></div>
       <div class="cta-row rv"><a class="btn" ${bookAttrs}>Book</a></div>

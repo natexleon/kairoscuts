@@ -30,7 +30,7 @@ Rendering: plain static HTML — every price, address, hour and FAQ answer is in
 | URL | Status | Target intent (hypothesis — validate with Search Console) |
 |---|---|---|
 | `/` | Updated | barbershop Stoney Creek · barber Stoney Creek · barber shop Hamilton · brand ("kairos cuts") |
-| `/services/` | New (replaces Webflow `/services`) | barber prices Stoney Creek · beard trim · kids haircut · braids & locs (sections `#beard`, `#kids`, `#braids-and-locs`) |
+| `/services/` | New (replaces Webflow `/services`) | barber prices Stoney Creek · beard trim · kids haircut · braids & styling (sections `#beard`, `#kids`, `#braids-and-styling`) |
 | `/services/mens-haircuts/` | New | men's haircut Stoney Creek / Hamilton |
 | `/services/fade-haircuts/` | New | fade haircut Stoney Creek / Hamilton |
 | `/barbers/` | New | barbers at Kairos Cuts · "[barber name] Kairos Cuts" |
@@ -38,7 +38,7 @@ Rendering: plain static HTML — every price, address, hour and FAQ answer is in
 
 Redirects (`dist/_redirects`, read by Netlify and Cloudflare Pages): `/old-home-2`, `/thank-you`, `/template-utilities/*` → `/` (301). Webflow `/services` is served by `/services/` — static hosts redirect the missing slash automatically; confirm after launch (section 9).
 
-Deliberately **not** created (insufficient unique content — would be thin or duplicate): separate beard, kids, braids-and-locs, reviews, about, contact and city pages. Revisit when there is first-hand material (see section 7).
+Deliberately **not** created (insufficient unique content — would be thin or duplicate): separate beard, kids, braids-and-styling, reviews, about, contact and city pages. Revisit when there is first-hand material (see section 7).
 
 Keyword list status: no search-volume or ranking data was available, so every keyword above is a hypothesis. Do not report volumes until measured.
 
@@ -72,7 +72,7 @@ Validate after deploy: [Rich Results Test](https://search.google.com/test/rich-r
 
 ## 5. Google Business Profile & listings checklist
 
-- [ ] Primary category **Barber shop**. Review secondary categories honestly (e.g. "Hair salon" only if braids/locs styling is a core offer).
+- [ ] Primary category **Barber shop**. Review secondary categories honestly (e.g. "Hair salon" only if braiding and hairstyling is a core offer).
 - [ ] Business name exactly **Kairos Cuts** — no keywords.
 - [ ] Address identical to the site: `142 King Street West, Unit 1, Hamilton, ON L8G 0A9` (Stoney Creek area); confirm the map pin sits on the building.
 - [ ] Phone `(905) 662-1810`; website `https://kairoscuts.com/`.
@@ -110,7 +110,7 @@ Track monthly in Search Console (Performance → Queries, filter by "contains"):
 | Fade | `fade` | `/services/fade-haircuts/` |
 | Beard | `beard` | `/services/#beard` (consider a page if impressions grow) |
 | Kids | `kids`, `child` | `/services/#kids` |
-| Braids & locs | `braid`, `loc` | `/services/#braids-and-locs` |
+| Braids & styling | `braid`, `stylist` | `/services/#braids-and-styling` |
 
 Also record GBP Insights (calls, direction requests, website clicks) and Fresha bookings. For AI answers, check monthly by hand in ChatGPT search, Perplexity, Gemini and Copilot with the questions in the brief, and note whether Kairos Cuts is named and whether the facts are correct — there's no reliable automated measure.
 
@@ -121,7 +121,7 @@ Also record GBP Insights (calls, direction requests, website clicks) and Fresha 
 3. **Kids' haircuts at Kairos Cuts** — ages, how barbers handle first cuts, tips for parents. *Needs:* Dee's guidance; the case for a `/services/kids-haircuts/` page.
 4. **How often should you get a haircut or line up?** — real rebooking intervals the barbers recommend.
 5. **Beard care between appointments** — line maintenance, products the shop actually uses.
-6. **Braids and locs with Shia** — styles offered, prices, time, hair prep. *Needs:* Shia's input and portfolio — then promote `#braids-and-locs` to its own page.
+6. **Braiding and hairstyling with Shia** — styles offered, prices, time, hair prep. *Needs:* Shia's input and portfolio — then promote `#braids-and-styling` to its own page.
 
 Skip generic articles that repeat what every barbershop site says.
 

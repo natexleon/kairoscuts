@@ -114,7 +114,7 @@
   // Booking clicks are outbound clicks to Fresha, not confirmed bookings.
   function clickType(a){
     var href = a.getAttribute('href') || '';
-    if (href.indexOf('fresha.com') !== -1) return 'booking_click';
+    if (href.indexOf('fresha.com') !== -1 || href.indexOf('acuityscheduling.com') !== -1) return 'booking_click';
     if (href.indexOf('tel:') === 0) return 'phone_click';
     if (href.indexOf('google.com/maps') !== -1) return 'directions_click';
     if (href.indexOf('mailto:') === 0) return 'email_click';

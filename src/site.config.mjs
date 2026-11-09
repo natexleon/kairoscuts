@@ -77,15 +77,18 @@ export const menu = [
   },
 ];
 
-// `rated` is true only where Fresha shows a 5.0 rating on the barber's profile.
+// Shia books through her own Acuity page rather than the shop's Fresha listing.
+export const SHIA_BOOKING_URL = 'https://app.acuityscheduling.com/schedule/16da735a';
+
+// Display order. `rated` is true only where Fresha shows a 5.0 rating on the barber's profile.
 export const barbers = [
-  { id: 'dee', name: 'Dee', role: 'Owner · Master Barber', rated: true, extra: '35+ years', image: 'barber-dee', alt: 'Dee, owner and master barber of Kairos Cuts' },
   { id: 'tiago', name: 'Tiago', role: 'Senior Barber', rated: true, image: 'barber-tiago', alt: 'Tiago, senior barber at Kairos Cuts' },
   { id: 'joban', name: 'Joban', role: 'Senior Barber', rated: true, image: 'barber-joban', alt: 'Joban, senior barber at Kairos Cuts' },
-  { id: 'dami', name: 'Dami', role: 'Barber', rated: true, image: 'barber-dami', alt: 'Dami, barber at Kairos Cuts' },
-  { id: 'shia', name: 'Shia', role: 'Loc Specialist · Braids', rated: false, image: 'barber-shia', alt: 'Shia, braid and loc specialist at Kairos Cuts' },
+  { id: 'dami', name: 'Dami', role: 'Senior Barber', rated: true, image: 'barber-dami', alt: 'Dami, senior barber at Kairos Cuts' },
+  { id: 'shia', name: 'Shia', role: 'Hairstylist · Braid Specialist', rated: false, image: 'barber-shia', alt: 'Shia, hairstylist and braid specialist at Kairos Cuts', bookingUrl: SHIA_BOOKING_URL },
   { id: 'shi', name: 'Shi', role: 'Curly-Puff Barber · Apprentice', rated: false, image: 'barber-shi', alt: 'Shi, apprentice barber at Kairos Cuts' },
   { id: 'dante', name: 'Dante', role: 'Apprentice', rated: false, image: 'barber-dante', alt: 'Dante, apprentice barber at Kairos Cuts' },
+  { id: 'dee', name: 'Dee', role: 'Owner · Master Barber', rated: true, extra: '35+ years', image: 'barber-dee', alt: 'Dee, owner and master barber of Kairos Cuts' },
 ];
 
 // Verified Fresha reviews already published on the site. `barber` matches a barber id.

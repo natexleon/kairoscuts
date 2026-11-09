@@ -1,5 +1,5 @@
 import { business, barbers, reviews } from '../site.config.mjs';
-import { img, esc, bookAttrs, pageHead, closingCta, barbershopNode, websiteNode, webPageNode, breadcrumbNode } from '../layout.mjs';
+import { img, esc, bookAttrs, bookAttrsFor, pageHead, closingCta, barbershopNode, websiteNode, webPageNode, breadcrumbNode } from '../layout.mjs';
 
 const path = '/barbers/';
 const title = 'Our Barbers | Kairos Cuts Barbershop, Stoney Creek';
@@ -11,8 +11,8 @@ const bios = {
   dee: `Dee owns Kairos Cuts and has been cutting all hair types for 35+ years. He started at 16 as an apprentice under Big Ray and Mark T. at Trinbago Barber Shop in Mississauga, learning old-school technique he still uses today, blended with newer styles.`,
   tiago: 'Tiago is one of the shop\'s senior barbers.',
   joban: 'Joban is one of the shop\'s senior barbers. His verified reviews include fade haircuts and cut-and-beard appointments.',
-  dami: 'Dami is a barber at Kairos Cuts.',
-  shia: `Shia is the shop's braid and loc specialist. Braids and locs aren't on the published price list, so check Shia's services on Fresha. <a href="/services/#braids-and-locs">More on braids &amp; locs</a>.`,
+  dami: "Dami is one of the shop's senior barbers.",
+  shia: `Shia specializes in professional braiding and hairstyling, creating customized looks for every client. With attention to detail and a passion for hair, Shia provides a comfortable, high-quality experience that leaves you feeling confident and refreshed. <a href="/services/#braids-and-styling">More on braids &amp; styling</a>.`,
   shi: 'Shi is an apprentice barber on the Kairos Cuts team.',
   dante: 'Dante is an apprentice barber on the Kairos Cuts team.',
 };
@@ -29,7 +29,7 @@ const profile = (b) => {
           ${b.rated ? `<p class="p-rate"><span class="stars" aria-hidden="true">★★★★★</span> Rated ${business.rating} on Fresha</p>` : ''}
           <p>${bios[b.id]}</p>
           ${r ? `<blockquote><p style="margin:0;color:var(--bone);">“${esc(r.text)}”</p><footer>${esc(r.who)} · ${esc(r.service)}</footer></blockquote>` : ''}
-          <div class="page-actions"><a class="btn" ${bookAttrs}>Book with ${b.name}</a></div>
+          <div class="page-actions"><a class="btn" ${bookAttrsFor(b)}>Book with ${b.name}</a></div>
         </div>
       </article>`;
 };
@@ -59,7 +59,7 @@ ${pageHead({
       <ul class="link-cards">
         <li><a href="/services/mens-haircuts/"><span class="lc-title">Men's haircuts</span><span class="lc-text">Gentlemen's cuts from $35, booked for 45 minutes.</span><span class="lc-go">View →</span></a></li>
         <li><a href="/services/fade-haircuts/"><span class="lc-title">Fade haircuts</span><span class="lc-text">$40 fades and $45 fade + beard.</span><span class="lc-go">View →</span></a></li>
-        <li><a href="/services/#braids-and-locs"><span class="lc-title">Braids &amp; locs</span><span class="lc-text">With Shia, the shop's braid and loc specialist.</span><span class="lc-go">View →</span></a></li>
+        <li><a href="/services/#braids-and-styling"><span class="lc-title">Braids &amp; styling</span><span class="lc-text">With Shia, the shop's hairstylist and braid specialist.</span><span class="lc-go">View →</span></a></li>
         <li><a href="/services/#kids"><span class="lc-title">Kids &amp; young men</span><span class="lc-text">Kids' cuts for all ages from $30.</span><span class="lc-go">View →</span></a></li>
       </ul>
     </div>

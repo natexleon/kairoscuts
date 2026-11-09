@@ -1,5 +1,5 @@
-import { business, menu } from '../site.config.mjs';
-import { img, bookAttrs, priceRows, pageHead, closingCta, faqHtml, faqNode, barbershopNode, websiteNode, webPageNode, breadcrumbNode, addressText } from '../layout.mjs';
+import { business, menu, barbers } from '../site.config.mjs';
+import { img, bookAttrs, bookAttrsFor, priceRows, pageHead, closingCta, faqHtml, faqNode, barbershopNode, websiteNode, webPageNode, breadcrumbNode, addressText } from '../layout.mjs';
 
 const path = '/services/';
 const title = 'Barber Services & Prices | Kairos Cuts, Stoney Creek';
@@ -18,7 +18,7 @@ const faqs = [
   ["How much is a men's haircut at Kairos Cuts?", "A Gentlemen's Haircut is $35 for a 45-minute appointment. A Fade Haircut is $40, Scissors Only is $45, and a Buzz Cut (one level) is $27. All prices are in Canadian dollars."],
   ['Does Kairos Cuts do beard trims?', 'Yes. A Beard service is $25 for 30 minutes. You can also book a Gentleman\'s Haircut + Beard for $40 or a Fade + Beard for $45.'],
   ["Does Kairos Cuts cut kids' hair?", "Yes. A Kids Haircut is $30 and is for all ages (30–45 minutes). Young men aged 10 to 15 can book a Young Man's Basic Cut for $30 or a Young Man's Fade for $38."],
-  ['Who does braids and locs at Kairos Cuts?', 'Shia is the shop\'s braid and loc specialist. Braids and locs aren\'t on the published price list, so check Shia\'s services and availability on Fresha or call the shop.'],
+  ['Who does braids and hairstyling at Kairos Cuts?', "Shia is the shop's hairstylist and braid specialist. Shia's services aren't on the published price list — see options and availability on Shia's own booking page, or call the shop."],
   ['Can I book online or walk in?', `You can book any service and choose your barber online through Fresha, or call ${business.phoneDisplay}. Walk-ins are welcome when a chair is free.`],
   ['Is there a fee for paying by card?', 'Debit and credit transactions are subject to a processing fee. Cancellations can be made online or by phone.'],
 ];
@@ -50,18 +50,18 @@ ${pageHead({
     </div>
   </section>
 
-  <section class="block alt" id="braids-and-locs" data-section="braids-and-locs">
+  <section class="block alt" id="braids-and-styling" data-section="braids-and-styling">
     <div class="wrap split">
       <div class="prose">
-        <p class="label">Braids &amp; locs</p>
-        <h2>Braids and locs with Shia</h2>
-        <p>Shia is the shop's braid and loc specialist, working alongside the barbers at our Stoney Creek location.</p>
-        <p>Braids and locs aren't part of the published price list above, so pricing and appointment length depend on the style. Check Shia's available services on Fresha, or call the shop at <a href="tel:${business.phoneE164}">${business.phoneDisplay}</a> before you book.</p>
-        <div class="page-actions"><a class="btn" ${bookAttrs}>Book with Shia</a><a class="dir-link" href="/barbers/#shia">About Shia →</a></div>
+        <p class="label">Braids &amp; styling</p>
+        <h2>Braiding and hairstyling with Shia</h2>
+        <p>Shia specializes in professional braiding and hairstyling, creating customized looks for every client. With attention to detail and a passion for hair, Shia provides a comfortable, high-quality experience that leaves you feeling confident and refreshed.</p>
+        <p>Shia's services aren't part of the published price list above and are booked separately. See the options and availability on Shia's booking page, or call the shop at <a href="tel:${business.phoneE164}">${business.phoneDisplay}</a>.</p>
+        <div class="page-actions"><a class="btn" ${bookAttrsFor(barbers.find((b) => b.id === 'shia'))}>Book with Shia</a><a class="dir-link" href="/barbers/#shia">About Shia →</a></div>
       </div>
       <div class="photo-pair">
-        <figure>${img('locs-by-shia-kairos-cuts', { alt: 'Locs styled by Shia at Kairos Cuts', sizes: '(min-width: 861px) 22vw, 46vw' })}</figure>
-        <figure>${img('locs-kairos-cuts', { alt: 'A client with locs in the chair at Kairos Cuts', sizes: '(min-width: 861px) 22vw, 46vw' })}</figure>
+        <figure>${img('shia-hairstyling-kairos-cuts', { alt: "Shia styling a client's hair at Kairos Cuts", sizes: '(min-width: 861px) 22vw, 46vw' })}</figure>
+        <figure>${img('shia-styling-client-kairos-cuts', { alt: "Shia working with a client in the chair at Kairos Cuts", sizes: '(min-width: 861px) 22vw, 46vw' })}</figure>
       </div>
     </div>
   </section>

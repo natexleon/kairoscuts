@@ -19,6 +19,7 @@ export function img(name, { alt, sizes = '100vw', cls = '', priority = false, at
 }
 
 export const bookAttrs = `href="${BOOKING_URL}" target="_blank" rel="noopener"`;
+export const bookAttrsFor = (barber) => barber?.bookingUrl ? `href="${barber.bookingUrl}" target="_blank" rel="noopener"` : bookAttrs;
 
 const addressLines = `${business.address.street}<br />${business.address.locality}, ${business.address.city}, <span class="nw">${business.address.region} ${business.address.postalCode}</span>`;
 export const addressHtml = addressLines;
@@ -172,7 +173,7 @@ export function barberCard(b, { sizes = '(min-width: 900px) 25vw, 86vw' } = {}) 
   const rate = b.rated ? `<span class="brate"><span class="stars" aria-hidden="true">★★★★★</span> ${business.rating}${b.extra ? ` · ${b.extra}` : ''}</span>` : (b.extra ? `<span class="brate">${b.extra}</span>` : '');
   return `<li data-label="${b.name}"><article class="bcard">
           <div class="photo">${img(b.image, { alt: b.alt, sizes })}<div class="bname"><a href="/barbers/#${b.id}">${b.name}</a></div></div>
-          <div class="bmeta"><span class="brole">${b.role}</span>${rate}<a class="book" ${bookAttrs}>Book with ${b.name}</a></div>
+          <div class="bmeta"><span class="brole">${b.role}</span>${rate}<a class="book" ${bookAttrsFor(b)}>Book with ${b.name}</a></div>
         </article></li>`;
 }
 
@@ -210,7 +211,7 @@ export function barbershopNode() {
     '@id': ORG_ID,
     name: business.name,
     url: abs('/'),
-    description: 'Barbershop in Stoney Creek, Hamilton, Ontario, established in 2019. Men\'s haircuts, fades, beard trims, kids\' cuts, and braids and locs, with online booking through Fresha.',
+    description: 'Barbershop in Stoney Creek, Hamilton, Ontario, established in 2019. Men\'s haircuts, fades, beard trims, kids\' cuts, and braiding and hairstyling, with online booking through Fresha.',
     image: [abs('/images/og-kairos-cuts-stoney-creek.jpg'), abs(imageUrl('kairos-cuts-team-stoney-creek-barbershop')), abs(imageUrl('dee-owner-kairos-cuts-stoney-creek'))],
     telephone: business.phoneE164,
     email: business.email,
