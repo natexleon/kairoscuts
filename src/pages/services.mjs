@@ -3,7 +3,7 @@ import { img, bookAttrs, bookAttrsFor, priceRows, pageHead, closingCta, faqHtml,
 
 const path = '/services/';
 const title = 'Barber Services & Prices | Kairos Cuts, Stoney Creek';
-const description = "The full Kairos Cuts menu: men's haircuts $35, fades $40, beard trims $25, kids' cuts $30 and more, in Canadian dollars. Stoney Creek barbershop with online booking.";
+const description = "The full Kairos Cuts menu: gentlemen's cuts $35, fades $40, beard trims $25 and kids' cuts $30 (CAD). Stoney Creek barbershop with online booking.";
 const crumbs = [['/', 'Home'], ['/services/', 'Services & prices']];
 
 const catCopy = {
