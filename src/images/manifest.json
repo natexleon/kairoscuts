@@ -34,19 +34,18 @@
                                                       ]
                                        },
     "shia-hairstyling-kairos-cuts":  {
-                                     "width":  1350,
-                                     "height":  2400,
-                                     "widths":  [
-                                                    450,
-                                                    900
-                                                ]
-                                 },
+                                         "width":  1350,
+                                         "height":  2400,
+                                         "widths":  [
+                                                        450,
+                                                        900
+                                                    ]
+                                     },
     "barber-dee":  {
-                       "width":  900,
-                       "height":  1600,
+                       "width":  360,
+                       "height":  640,
                        "widths":  [
-                                      420,
-                                      810
+                                      360
                                   ]
                    },
     "barber-tiago":  {
@@ -66,35 +65,32 @@
                                     ]
                      },
     "barber-dami":  {
-                        "width":  900,
-                        "height":  1600,
+                        "width":  410,
+                        "height":  729,
                         "widths":  [
-                                       420,
-                                       810
+                                       410
                                    ]
                     },
     "barber-shia":  {
-                        "width":  900,
-                        "height":  1600,
+                        "width":  720,
+                        "height":  1280,
                         "widths":  [
                                        420,
-                                       810
+                                       720
                                    ]
                     },
     "barber-shi":  {
-                       "width":  900,
-                       "height":  1600,
+                       "width":  375,
+                       "height":  667,
                        "widths":  [
-                                      420,
-                                      810
+                                      375
                                   ]
                    },
     "barber-dante":  {
-                         "width":  900,
-                         "height":  1600,
+                         "width":  360,
+                         "height":  640,
                          "widths":  [
-                                        420,
-                                        810
+                                        360
                                     ]
                      },
     "haircut-in-progress-kairos-cuts":  {
@@ -114,13 +110,13 @@
                                               ]
                                },
     "shia-styling-client-kairos-cuts":  {
-                             "width":  900,
-                             "height":  1600,
-                             "widths":  [
-                                            360,
-                                            640
-                                        ]
-                         },
+                                            "width":  900,
+                                            "height":  1600,
+                                            "widths":  [
+                                                           360,
+                                                           640
+                                                       ]
+                                        },
     "kairos-cuts-crew":  {
                              "width":  900,
                              "height":  1600,

@@ -15,13 +15,14 @@ $plan = @(
   @{ name = 'fade-haircut-kairos-cuts'; widths = 450, 900 },
   @{ name = 'gentlemens-haircut-kairos-cuts'; widths = 450, 900 },
   @{ name = 'shia-hairstyling-kairos-cuts'; widths = 450, 900 },
-  @{ name = 'barber-dee'; widths = 420, 810 },
+  # Full-length barber shots are cropped (left, top, width as fractions of the photo; aspect kept) to match Joban's head-and-shoulders framing.
+  @{ name = 'barber-dee'; widths = 420, 810; crop = 0.295, 0.278, 0.40 },
   @{ name = 'barber-tiago'; widths = 420, 810 },
   @{ name = 'barber-joban'; widths = 420, 810 },
-  @{ name = 'barber-dami'; widths = 420, 810 },
-  @{ name = 'barber-shia'; widths = 420, 810 },
-  @{ name = 'barber-shi'; widths = 420, 810 },
-  @{ name = 'barber-dante'; widths = 420, 810 },
+  @{ name = 'barber-dami'; widths = 420, 810; crop = 0.265, 0.207, 0.455 },
+  @{ name = 'barber-shia'; widths = 420, 810; crop = 0.124, 0.075, 0.80 },
+  @{ name = 'barber-shi'; widths = 420, 810; crop = 0.296, 0.214, 0.417 },
+  @{ name = 'barber-dante'; widths = 420, 810; crop = 0.307, 0.229, 0.40 },
   @{ name = 'haircut-in-progress-kairos-cuts'; widths = 360, 640 },
   @{ name = 'beard-trim-kairos-cuts'; widths = 360, 640 },
   @{ name = 'shia-styling-client-kairos-cuts'; widths = 360, 640 },
@@ -67,12 +68,19 @@ for ($i = 0; $i -lt $plan.Count; $i++) {
     }
   }
   $full = New-Object Drawing.Rectangle 0, 0, $img.Width, $img.Height
-  $widths = @($entry.widths | Where-Object { $_ -le $img.Width })
+  if ($entry.crop) {
+    $cw = [int][Math]::Round($img.Width * $entry.crop[2])
+    $ch = [int][Math]::Round($cw * $img.Height / $img.Width)
+    $full = New-Object Drawing.Rectangle ([int]($img.Width * $entry.crop[0])), ([int]($img.Height * $entry.crop[1])), $cw, $ch
+  }
+  $widths = @($entry.widths | Where-Object { $_ -le $full.Width })
+  if ($widths.Count -eq 0) { $widths = @($full.Width) }
+  elseif ($entry.crop -and $full.Width - ($widths | Measure-Object -Maximum).Maximum -gt 100) { $widths += $full.Width }
   foreach ($w in $widths) {
-    $h = [int][Math]::Round($img.Height * $w / $img.Width)
+    $h = [int][Math]::Round($full.Height * $w / $full.Width)
     Save-Resized $img $full $w $h (Join-Path $outDir "$($entry.name)-$w.jpg")
   }
-  $manifest[$entry.name] = [ordered]@{ width = $img.Width; height = $img.Height; widths = $widths }
+  $manifest[$entry.name] = [ordered]@{ width = $full.Width; height = $full.Height; widths = $widths }
 
   if ($i -eq 19) {
     # Social preview: 1200x630 centre crop of the storefront photo.
