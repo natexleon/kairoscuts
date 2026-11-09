@@ -25,6 +25,20 @@ const assets = { css: fingerprint('styles.css', 'css'), js: fingerprint('site.js
 
 cpSync(join(src, 'images'), join(dist, 'images'), { recursive: true, filter: (p) => !p.endsWith('manifest.json') });
 cpSync(join(src, 'assets', 'favicon.svg'), join(dist, 'favicon.svg'));
+cpSync(join(src, 'assets', 'icons'), dist, { recursive: true });
+writeFileSync(join(dist, 'site.webmanifest'), JSON.stringify({
+  name: 'Kairos Cuts',
+  short_name: 'Kairos Cuts',
+  start_url: '/',
+  display: 'browser',
+  background_color: '#0d0d0d',
+  theme_color: '#0d0d0d',
+  icons: [
+    { src: '/icon-192.png', sizes: '192x192', type: 'image/png' },
+    { src: '/icon-512.png', sizes: '512x512', type: 'image/png' },
+    { src: '/icon-maskable-512.png', sizes: '512x512', type: 'image/png', purpose: 'maskable' },
+  ],
+}, null, 2));
 
 const manifest = JSON.parse(readFileSync(join(src, 'images', 'manifest.json'), 'utf8'));
 const pageFiles = readdirSync(join(src, 'pages')).filter((f) => f.endsWith('.mjs'));
