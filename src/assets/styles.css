@@ -109,10 +109,10 @@ nav.main a:hover{ color:#fff; }
 }
 
 /* Scrolling wordmark banner */
-.marquee{ background:linear-gradient(180deg, #ececec 0%, #c9c9c9 42%, #a9a9a9 58%, #d6d6d6 100%); border-top:1px solid #f5f5f5; border-bottom:1px solid #8a8a8a; overflow:hidden; padding:12px 0 16px; }
-.marquee-track{ display:flex; width:max-content; animation:marquee 18s linear infinite; will-change:transform; }
-.marquee span{ font-size:clamp(52px,8.5vw,110px); font-weight:800; letter-spacing:.02em; text-transform:uppercase; line-height:1; color:#0d0d0d; white-space:nowrap; padding-right:.45em; }
-.marquee span i{ font-style:normal; color:rgba(13,13,13,.35); }
+.marquee{ position:relative; isolation:isolate; background:linear-gradient(180deg,#fafafa 0%,#dedede 16%,#b6b8bb 43%,#96999d 49%,#c9cbce 53%,#ececee 80%,#b5b8bc 100%); border-top:1px solid #fff; border-bottom:1px solid #6d7075; box-shadow:inset 0 2px 0 #ffffff80,inset 0 -3px 8px #0002,0 8px 28px #0005; overflow:hidden; padding:18px 0 20px; }
+.marquee-track{ position:relative; z-index:1; display:flex; width:max-content; animation:marquee 25s linear infinite; will-change:transform; }
+.marquee span{ font-size:clamp(40px,7.4vw,96px); font-weight:800; letter-spacing:-.025em; text-transform:uppercase; line-height:1; color:#101113; text-shadow:0 1px 0 #ffffff80; white-space:nowrap; padding-right:.7em; }
+.marquee span i{ display:inline-block; margin:0 .28em; font-style:normal; font-weight:400; color:#42464b; text-shadow:0 1px 0 #ffffff90; }
 @keyframes marquee{ from{ transform:translateX(0); } to{ transform:translateX(-50%); } }
 
 /* Intro — The Shop */
@@ -455,3 +455,7 @@ nav.main a[aria-current="page"]{ color:#fff; }
 .bname{display:flex;align-items:center;flex-wrap:wrap;gap:10px;}
 .profile-name{display:flex;align-items:center;flex-wrap:wrap;gap:16px;}
 @media(max-width:700px){.visit-highlights-grid{grid-template-columns:1fr;gap:20px;}.visit-highlights-grid>div+div{border-left:0;border-top:1px solid #34414e;padding:20px 0 0;}.visit-highlights p{max-width:none;}}
+
+.marquee::after{content:"";position:absolute;inset:0;z-index:2;pointer-events:none;background:linear-gradient(110deg,transparent 20%,#ffffff24 44%,#ffffff70 50%,#ffffff16 56%,transparent 80%);background-size:250% 100%;animation:chrome-sheen 12s ease-in-out infinite;}
+@keyframes chrome-sheen{0%,20%{background-position:140% 0;}70%,100%{background-position:-80% 0;}}
+@media(prefers-reduced-motion:reduce){.marquee::after{animation:none;}}
