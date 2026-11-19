@@ -528,3 +528,9 @@ nav.main a[aria-current="page"]{ color:#fff; }
 .application-received h3{margin:0 0 8px;}.application-received p{margin:0;}
 @media(max-width:800px){.family-card{grid-template-columns:1fr;}.family-copy{padding:32px;}.family-photo{min-height:260px;aspect-ratio:1.5;}.family-photo img{object-position:center 45%;}}
 @media(max-width:520px){.family-section{padding:48px 0;}.family-copy{padding:28px 24px;}.family-copy h2{font-size:36px;}.family-button{width:100%;padding-inline:16px;}.apply-dialog{padding:24px 18px;border-radius:16px;}.apply-grid{grid-template-columns:1fr;gap:18px;}.apply-progress{gap:6px;}.apply-progress li{flex-direction:column;align-items:flex-start;gap:8px;font-size:14px;}.apply-actions .btn{padding:14px 18px;}.apply-actions{justify-content:space-between;}.apply-actions .btn:only-child{margin-left:auto;}}
+
+/* Keep the invitation within narrow screens and show the complete team photo. */
+.family-copy,.family-photo{min-width:0;}
+.family-button{max-width:100%;min-width:0;white-space:normal;line-height:1.4;text-align:center;}
+@media(max-width:800px){.family-card{grid-template-columns:minmax(0,1fr);}.family-photo{min-height:0;aspect-ratio:auto;}.family-photo img{position:relative;height:auto;width:100%;object-fit:contain;object-position:center;}}
+@media(max-width:520px){.family-button{display:block;width:100%;padding:16px 12px;letter-spacing:.04em;}.family-copy h2{font-size:clamp(28px,8.5vw,36px);overflow-wrap:break-word;}}
