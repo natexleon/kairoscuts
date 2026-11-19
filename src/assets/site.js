@@ -136,3 +136,116 @@
     else if (Array.isArray(window.dataLayer)) window.dataLayer.push(Object.assign({ event: type }, params));
   });
 })();
+
+(function () {
+  var open = document.getElementById('openApplication');
+  var dialog = document.getElementById('barberApplication');
+  var form = document.getElementById('candidateForm');
+  if (!open || !dialog || !form) return;
+  var steps = Array.from(form.querySelectorAll('.apply-step'));
+  var progress = Array.from(dialog.querySelectorAll('.apply-progress li'));
+  var back = document.getElementById('applicationBack');
+  var next = document.getElementById('applicationNext');
+  var error = document.getElementById('applicationError');
+  var names = ['About you', 'Your craft', 'Your fit', 'Review'];
+  var current = 0;
+  var sending = false;
+  form.noValidate = true;
+  form.elements._next.value = location.origin + '/?application=received#join-family';
+  function review() {
+    var box = document.getElementById('applicationReview');
+    box.replaceChildren();
+    var data = new FormData(form);
+    var seen = new Set();
+    data.forEach(function (value, key) {
+      if (key[0] === '_' || key === 'Contact consent' || seen.has(key) || !String(value).trim()) return;
+      seen.add(key);
+      var row = document.createElement('div');
+      var label = document.createElement('dt');
+      var detail = document.createElement('dd');
+      label.textContent = key === 'email' ? 'Email address' : key;
+      detail.textContent = data.getAll(key).join(', ');
+      var list = document.createElement('dl');
+      list.append(label, detail);
+      row.append(list);
+      box.append(row);
+    });
+  }
+  function show(index, focus) {
+    current = index;
+    error.hidden = true;
+    steps.forEach(function (step, i) { step.hidden = i !== index; });
+    progress.forEach(function (item, i) {
+      item.classList.toggle('is-complete', i < index);
+      if (i === index) item.setAttribute('aria-current', 'step');
+      else item.removeAttribute('aria-current');
+    });
+    back.hidden = index === 0;
+    next.textContent = index === 3 ? 'Send my application' : 'Continue';
+    document.getElementById('applicationStepStatus').textContent = 'Step ' + (index + 1) + ' of 4 · ' + names[index];
+    if (index === 3) review();
+    if (focus) {
+      dialog.scrollTop = 0;
+      var legend = steps[index].querySelector('legend');
+      legend.tabIndex = -1;
+      legend.focus();
+    }
+  }
+  function valid(index) {
+    var fields = Array.from(steps[index].querySelectorAll('input, select, textarea'));
+    var days = Array.from(form.querySelectorAll('[name="Available days"]'));
+    if (index === 2) days[0].setCustomValidity(days.some(function (d) { return d.checked; }) ? '' : 'Please choose at least one available day.');
+    var invalid = fields.find(function (f) { return !f.checkValidity(); });
+    if (!invalid) return true;
+    show(index, false);
+    error.textContent = 'Please check the highlighted field before continuing.';
+    error.hidden = false;
+    invalid.focus();
+    invalid.reportValidity();
+    return false;
+  }
+  open.addEventListener('click', function () {
+    if (!dialog.open) dialog.showModal();
+    document.body.classList.add('application-open');
+    show(current, false);
+    steps[current].querySelector('input,select,textarea').focus();
+  });
+  dialog.querySelector('.apply-close').addEventListener('click', function () { dialog.close(); });
+  dialog.addEventListener('close', function () { document.body.classList.remove('application-open'); open.focus(); });
+  back.addEventListener('click', function () { if (!sending) show(Math.max(0, current - 1), true); });
+  form.addEventListener('change', function () {
+    var days = Array.from(form.querySelectorAll('[name="Available days"]'));
+    if (days.some(function (d) { return d.checked; })) days[0].setCustomValidity('');
+  });
+  form.addEventListener('submit', function (e) {
+    if (sending) { e.preventDefault(); return; }
+    if (current < 3) { e.preventDefault(); if (valid(current)) show(current + 1, true); return; }
+    for (var i = 0; i < steps.length; i++) if (!valid(i)) { e.preventDefault(); return; }
+    // Send every selected checkbox value as a readable email row.
+    ['Services', 'Hair types', 'Available days'].forEach(function (name) {
+      var choices = Array.from(form.querySelectorAll('input[type="checkbox"]')).filter(function (field) { return field.name === name; });
+      var summary = document.createElement('input');
+      summary.type = 'hidden';
+      summary.name = name;
+      summary.value = choices.filter(function (field) { return field.checked; }).map(function (field) { return field.value; }).join(', ') || 'Not specified';
+      summary.dataset.applicationSummary = 'true';
+      form.appendChild(summary);
+      choices.forEach(function (field) { field.disabled = true; });
+    });
+    sending = true;
+    next.disabled = true;
+    back.disabled = true;
+    next.textContent = 'Opening secure submission…';
+  });
+  window.addEventListener('pageshow', function () {
+    form.querySelectorAll('[data-application-summary]').forEach(function (field) { field.remove(); });
+    form.querySelectorAll('input[type="checkbox"]').forEach(function (field) { field.disabled = false; });
+    sending = false;
+    next.disabled = false;
+    back.disabled = false;
+    show(current, false);
+  });
+  if (new URLSearchParams(location.search).get('application') === 'received') {
+    document.getElementById('applicationReceived').hidden = false;
+  }
+})();

@@ -1,3 +1,4 @@
+import { joinFamily } from '../join-family.mjs';
 import { business, barbers, reviews, MAPS_URL, INSTAGRAM_URL } from '../site.config.mjs';
 import { img, bookAttrs, addressHtml, hoursList, barberCard, reviewCard, menuAccordion, closingCta, barbershopNode, websiteNode, webPageNode } from '../layout.mjs';
 
@@ -194,6 +195,7 @@ const body = `
     </div>
   </section>
 ${closingCta()}
+${joinFamily}
 </main>`;
 
 export default {
@@ -205,3 +207,4 @@ export default {
   jsonld: [barbershopNode(), websiteNode(), webPageNode({ path, title, description, image: 'dee-owner-kairos-cuts-stoney-creek', breadcrumb: false })],
   body,
 };
+
