@@ -86,7 +86,7 @@ export const barbers = [
   { id: 'joban', name: 'Joban', role: 'Senior Barber', rated: true, image: 'barber-joban', alt: 'Joban, senior barber at Kairos Cuts' },
   { id: 'dami', name: 'Dami', role: 'Senior Barber', rated: true, image: 'barber-dami', alt: 'Dami, senior barber at Kairos Cuts' },
   { id: 'shia', name: 'Shia', role: 'Hairstylist · Braid Specialist', rated: false, image: 'barber-shia', alt: 'Shia, hairstylist and braid specialist at Kairos Cuts', bookingUrl: SHIA_BOOKING_URL },
-  { id: 'shi', name: 'Shi', freeCuts: true, role: 'Curly-Puff Barber · Apprentice', rated: false, image: 'barber-shi', alt: 'Shi, apprentice barber at Kairos Cuts' },
+  { id: 'shi', name: 'Shi', freeCuts: true, role: 'Apprentice', rated: false, image: 'barber-shi', alt: 'Shi, apprentice barber at Kairos Cuts' },
   { id: 'dante', name: 'Dante', freeCuts: true, role: 'Apprentice', rated: false, image: 'barber-dante', alt: 'Dante, apprentice barber at Kairos Cuts' },
   { id: 'dee', name: 'Dee', role: 'Owner · Master Barber', rated: true, extra: '35+ years', image: 'barber-dee', alt: 'Dee, owner and master barber of Kairos Cuts' },
 ];
