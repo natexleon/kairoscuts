@@ -174,7 +174,7 @@ export function pageHead({ crumbs, label, title, lede, actions = '', facts = '' 
 /* ---------- Shared components ---------- */
 
 export function barberCard(b, { sizes = '(min-width: 900px) 25vw, 86vw' } = {}) {
-  const rate = b.rated ? `<span class="brate"><span class="stars" aria-hidden="true">★★★★★</span> ${business.rating}${b.extra ? ` · ${b.extra}` : ''}</span>` : (b.extra ? `<span class="brate">${b.extra}</span>` : '');
+  const rate = b.rated ? `<span class="brate"><span class="stars" aria-hidden="true">★★★★★</span> ${business.rating}${b.extra ? ` · ${b.extra}` : ''}</span>` : `<span class="brate" aria-hidden="true"><span class="stars">★★★★★</span>${b.extra ? ` ${b.extra}` : ''}</span>`;
   return `<li data-label="${b.name}"><article class="bcard">
           <div class="photo">${img(b.image, { alt: b.alt, sizes })}<div class="bname"><a href="/barbers/#${b.id}">${b.name}</a>${b.freeCuts ? '<span class="free-cut-badge">Free cuts</span>' : ''}</div></div>
           <div class="bmeta"><span class="brole">${b.role}</span>${rate}<a class="book" ${bookAttrsFor(b)}>Book with ${b.name}</a></div>

@@ -26,7 +26,7 @@ const profile = (b) => {
         <div class="prose">
           <h2 class="profile-name">${b.name}${b.freeCuts ? '<span class="free-cut-badge">Free cuts</span>' : ''}</h2>
           <p class="p-role">${b.role}</p>
-          ${b.rated ? `<p class="p-rate"><span class="stars" aria-hidden="true">★★★★★</span> Rated ${business.rating} on Fresha</p>` : ''}
+          ${b.rated ? `<p class="p-rate"><span class="stars" aria-hidden="true">★★★★★</span> Rated ${business.rating} on Fresha</p>` : '<p class="p-rate" aria-hidden="true"><span class="stars">★★★★★</span></p>'}
           <p>${bios[b.id]}</p>
           ${r ? `<blockquote><p style="margin:0;color:var(--bone);">“${esc(r.text)}”</p><footer>${esc(r.who)} · ${esc(r.service)}</footer></blockquote>` : ''}
           <div class="page-actions"><a class="btn" ${bookAttrsFor(b)}>Book with ${b.name}</a></div>
