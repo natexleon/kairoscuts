@@ -25,7 +25,7 @@ const body = `
     <div class="hero-bg" id="heroBg">${img('dee-owner-kairos-cuts-stoney-creek', { alt: 'Dee, owner and master barber, smiling inside Kairos Cuts in Stoney Creek', sizes: '(min-width: 1151px) 66vw, 100vw', priority: true })}</div>
     <div class="hero-shade"></div>
     <div class="hero-content">
-      <a class="hero-award" href="#awards"><svg viewBox="0 0 200 200" aria-hidden="true"><use href="#laurel" /></svg><span>Fresha Best in Class · <b>2023 &amp; 2026</b></span></a>
+      <a class="hero-award" href="#awards"><img class="hero-award-badge" src="/images/fresha-best-in-class-2026.png" width="160" height="160" alt="" decoding="async" /><span>Fresha Best in Class · <b>2023 &amp; 2026</b></span></a>
       <h1 class="hero-title"><span class="ht-lead">More than a cut.</span><span class="ht-lead ht-blue">It's the</span><span class="ht-main">Kairos experience.</span></h1>
       <p class="hero-copy">Honouring the art of traditional barbering. Mastering the techniques of today.</p>
       <a class="hero-proof" href="#reviews"><span class="star" aria-hidden="true">★</span>${business.rating}<span class="sep" aria-hidden="true">·</span><span class="count">${business.reviewFloor} Reviews</span></a>
@@ -38,7 +38,6 @@ const body = `
     <div class="wrap visit-highlights-grid">
       <div><span class="highlight-kicker">Start the week fresh</span><h2>Open Mondays!</h2><p>10 AM – 7 PM. Your Monday chair is waiting.</p></div>
       <div><span class="highlight-kicker">Come on in</span><h2>Walk-ins welcome</h2><p>Drop by and take the next available chair.</p></div>
-      <div><span class="highlight-kicker">Trained by Dee</span><h2>Every hair type.</h2><p>All textures. All styles. The same care in every chair.</p></div>
     </div>
   </section>
 
