@@ -443,3 +443,15 @@ nav.main a[aria-current="page"]{ color:#fff; }
   .menu-cat::details-content, .menu-cat::before, .mc-icon::after{ transition:none; }
   .hero-content > *{ animation:none; }
 }
+
+/* Visit highlights, apprentice offers and the shop's barbering roots. */
+.visit-highlights{padding:32px 0;background:#121920;border-block:1px solid #283746;}
+.visit-highlights-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:28px;}
+.visit-highlights-grid>div+div{border-left:1px solid #34414e;padding-left:28px;}
+.highlight-kicker{font-size:14px;letter-spacing:.09em;text-transform:uppercase;color:var(--blue-bright);font-weight:600;}
+.visit-highlights h2{font-size:clamp(22px,2.6vw,32px);line-height:1.15;margin:8px 0;letter-spacing:-.025em;}
+.visit-highlights p{color:var(--bone-dim);font-size:16px;margin:0;max-width:32ch;}
+.free-cut-badge{display:inline-flex;align-items:center;white-space:nowrap;font-family:var(--sans);font-size:14px;font-weight:700;line-height:1.2;letter-spacing:.04em;text-transform:uppercase;background:var(--gold-bright);color:#19150d;padding:8px 12px;border-radius:999px;vertical-align:middle;text-shadow:none;}
+.bname{display:flex;align-items:center;flex-wrap:wrap;gap:10px;}
+.profile-name{display:flex;align-items:center;flex-wrap:wrap;gap:16px;}
+@media(max-width:700px){.visit-highlights-grid{grid-template-columns:1fr;gap:20px;}.visit-highlights-grid>div+div{border-left:0;border-top:1px solid #34414e;padding:20px 0 0;}.visit-highlights p{max-width:none;}}

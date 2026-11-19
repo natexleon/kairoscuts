@@ -24,7 +24,7 @@ const profile = (b) => {
       <article class="profile" id="${b.id}">
         <div class="p-photo">${img(b.image, { alt: b.alt, sizes: '(min-width: 701px) 300px, 340px' })}</div>
         <div class="prose">
-          <h2>${b.name}</h2>
+          <h2 class="profile-name">${b.name}${b.freeCuts ? '<span class="free-cut-badge">Free cuts</span>' : ''}</h2>
           <p class="p-role">${b.role}</p>
           ${b.rated ? `<p class="p-rate"><span class="stars" aria-hidden="true">★★★★★</span> Rated ${business.rating} on Fresha</p>` : ''}
           <p>${bios[b.id]}</p>
@@ -40,7 +40,7 @@ ${pageHead({
   crumbs,
   label: 'The barbers',
   title: 'Meet the barbers',
-  lede: `Seven barbers work the floor at Kairos Cuts in Stoney Creek, led by owner and master barber Dee. Book with someone by name on Fresha, or take the first free chair.`,
+  lede: `One team. One standard. Every barber is trained by Dee and works with all hair types and textures. Choose your barber below, book online, or walk in. Open Mondays, too.`,
   actions: `<a class="btn" ${bookAttrs}>Book first available</a><a class="dir-link" href="/services/">See services &amp; prices →</a>`,
 })}
 

@@ -34,6 +34,14 @@ const body = `
     <div class="hero-caption">Dee — owner &amp; master barber, 35+ years behind the chair</div>
   </div>
 
+  <section class="visit-highlights" aria-label="Good to know">
+    <div class="wrap visit-highlights-grid">
+      <div><span class="highlight-kicker">Start the week fresh</span><h2>Open Mondays!</h2><p>10 AM – 7 PM. Your Monday chair is waiting.</p></div>
+      <div><span class="highlight-kicker">Come on in</span><h2>Walk-ins welcome</h2><p>Drop by and take the next available chair.</p></div>
+      <div><span class="highlight-kicker">Trained by Dee</span><h2>Every hair type.</h2><p>All textures. All styles. The same care in every chair.</p></div>
+    </div>
+  </section>
+
   <!-- Scrolling wordmark -->
   <div class="marquee" aria-hidden="true">
     <div class="marquee-track">
@@ -61,7 +69,7 @@ const body = `
     <div class="wrap">
       <p class="label rv">The Barbers</p>
       <h2 class="big rv d1">Pick your barber</h2>
-      <p class="intro-copy rv d2">Ask for someone by name on Fresha, or take the first free chair. All seven cut at the same address in Stoney Creek.</p>
+      <p class="intro-copy rv d2">Every barber is trained by Dee and cuts all hair types and textures. Pick your person, book your chair, or walk in. Look out for free cuts with apprentices Dante and Shi.</p>
       <ul class="rail barber-rail rv d1" id="barberRail" tabindex="0" aria-label="Barbers — swipe to see all seven">
         ${barbers.map((b) => barberCard(b)).join('\n        ')}
       </ul>
@@ -102,7 +110,7 @@ const body = `
     <div class="wrap">
       <p class="label center rv">The Work</p>
       <h2 class="big rv d1">Every hair type.<br />Every chair.</h2>
-      <p class="rv d2">Dee has cut all hair types for 35+ years. Shia specializes in braiding and hairstyling, and the rest of the crew covers fades, beards, kids, and seniors — every day.</p>
+      <p class="rv d2">Every barber on the team has trained under Dee and works with all hair types: straight, wavy, curly and coily. From classic cuts and fresh fades to beards and styling, bring your hair and make yourself at home.</p>
       <ul class="rail gallery rv d2" id="workRail" tabindex="0" aria-label="Our work — swipe for more">
         <li><figure class="g-card">${img('fade-haircut-kairos-cuts', { alt: 'A barber finishing a fade haircut in the chair at Kairos Cuts', sizes: '(min-width: 761px) 33vw, 84vw' })}<figcaption><a class="g-title" href="/services/fade-haircuts/">Fade Haircut</a><span class="g-price">$40</span></figcaption></figure></li>
         <li><figure class="g-card">${img('gentlemens-haircut-kairos-cuts', { alt: "A finished gentlemen's haircut at Kairos Cuts", sizes: '(min-width: 761px) 33vw, 84vw' })}<figcaption><a class="g-title" href="/services/mens-haircuts/">Gentlemen's Haircut</a><span class="g-price">$35</span></figcaption></figure></li>
@@ -144,7 +152,8 @@ const body = `
       </div>
       <p class="label center rv">The Shop</p>
       <p class="lede rv d1">Seven barbers. One standard. Every haircut should be worth coming back for.</p>
-      <p class="body rv d2">Kairos Cuts has been part of Stoney Creek since 2019. Owner Dee started cutting hair at 16, learning the craft under Big Ray and Mark T. in Mississauga. Today, seven barbers bring that same dedication to every cut, fade, beard, and style. Good people, great cuts, and a shop that feels like home.</p>
+      <p class="body rv d2">The Kairos story starts at <strong>Trinbago Barber Shop in Mississauga</strong>. At 16, Dee began learning the craft under Big Ray and Mark T. at the renowned shop, building the foundation for a lifetime behind the chair.</p>
+      <p class="body rv d2">Today, that tradition lives on at Kairos Cuts. Part of Stoney Creek since 2019, the shop brings together a team trained by Dee, with the skills to work with every hair type and texture. Seven barbers. One shared standard. Good people, great cuts, and a shop that feels like home.</p>
     </div>
   </section>
 
